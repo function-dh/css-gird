@@ -10,18 +10,35 @@
 	<meta name="author" content="">
 	<link rel="stylesheet" href="css/grid.css" type="text/css">
 	<style>
-		.container {
-			width: 400px;
+		body{color: #fff; background-color: #333;}
+		.wrap {
 			display: grid;
 			grid-template-rows: repeat(3, 100px);
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(3, 100px);
+			grid-template-areas: 
+				"header header header"
+				"container container aside"
+				"footer footer footer"
 		}
+		.header{grid-area: header;}
+		.container{grid-area: container;}
+		.container .aside{grid-area: aside;}
+		.footer{grid-area: footer;}
 	</style>
 </head>
 <body>
 	<div class="wrap">
+		<div class="header">
+			header
+		</div>
 		<div class="container">
-
+			conatiner
+		</div>
+		<div class="aside">
+			aside
+		</div>
+		<div class="footer">
+			footer
 		</div>
 	</div>
 </body>
