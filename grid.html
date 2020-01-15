@@ -114,12 +114,9 @@
 window.onload = function(){
 	function autoColor(){
 		var colorList = ['tomato', 'orange', 'limegreen', 'dodgerblue', 'hotpink', 'darkgray', 'crimson', 'orangered', 'lawngreen', 'aqua', 'royalblue', 'wheat', 'brown', 'gray', 'salmon', 'deeppink', 'gold', 'springgreen', 'slateblue', 'darkslategray']
-		var colorPick = Math.floor(Math.random()*colorList.length)
 		var items = document.querySelectorAll('.item')
 		
 		for(var i = 0; i < items.length; i++){
-			var itemHeight = items[i].offsetHeight
-			console.log(itemHeight)
 			items[i].style.backgroundColor = colorList[Math.floor(Math.random()*colorList.length)]
 		}
 	}
