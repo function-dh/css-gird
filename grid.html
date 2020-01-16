@@ -13,7 +13,7 @@
 		body{color: #fff; background-color: #333;}
 		.itembox{margin-top: 20px; font-size: 0;}
 		.itembox:first-child{margin-top: 0;}
-		.itembox .item{width: 100%; height: 100%; border-radius: 10px; border: 1px solid gold; line-height: 150px; text-align: center; font-size: 72px;}
+		.itembox .item{border-radius: 10px; border: 1px solid gold; line-height: 150px; text-align: center; font-size: 72px;}
 		.header, .container, .aside, .footer{background-color: #555;}
 
 		.wrap {
@@ -71,11 +71,44 @@
 			/* 배치하지 않은 아이템(Item)을 어떤 방식의 ‘자동 배치 알고리즘’으로 처리 */
 			/* 배치한 아이템은 grid-area(이하 개별 속성 포함)를 사용한 아이템을 의미 */
 			/* row, row dense, column, column dense (dense가 포함되면 공백없이) */
-			grid-auto-flow: row
+			grid-auto-flow: row dense
 
 		}
 		.box-02 .item:nth-child(2){
 			grid-column: span 3; /* span으로 설정하면 line이 아니라 block으로 잡힘 ex) 3이니까 3칸 */
+		}
+		
+		.box-03{
+			display: grid;
+			width: 450px;
+			height: 450px;
+			border: 2px solid #ddd;
+			grid-template-rows: repeat(3, 100px);
+			grid-template-columns: repeat(3, 100px);
+			/* align-content, justify-content */
+			/* 그리드 콘텐츠(Contents)를 열과 행 정렬 */
+			/* 그리드 콘텐츠의 세로,가로 너비가 그리드 컨테이너(Container)보다 작아야함 */
+			align-content: center; /* start, center, end, space-around, space-between, space-evenly, stretch */
+			justify-content: center;
+		
+			/* place-content */
+			/* align-content와 justify-content의 단축 속성 */
+			place-content: end space-between;
+
+			/* align-items, justify-items */
+			/* 그리드 아이템(Items)들을 열과 행 정렬합니다.
+			그리드 아이템의 세로, 가로 너비가 자신이 속한 그리드 행(Track)의 크기보다 작아야함. */
+			align-items: center; /* start, center, end, stretch */
+			justify-items: center;
+
+			/* place-items */
+			/* align-items, justify-items  단축속성 */
+			place-items: center center;
+
+		}
+		.box-03 .item{
+			width: 50px;
+			height: 50px;
 		}
 
 		.aside{grid-area: aside;}
@@ -101,6 +134,17 @@
 			<li class="item">3</li>
 			<li class="item">4</li>
 			<li class="item">5</li>
+		</ul>
+		<ul class="itembox box-03">
+			<li class="item"></li>
+			<li class="item"></li>
+			<li class="item"></li>
+			<li class="item"></li>
+			<li class="item"></li>
+			<li class="item"></li>
+			<li class="item"></li>
+			<li class="item"></li>
+			<li class="item"></li>
 		</ul>
 	</div>
 	<div class="aside">
