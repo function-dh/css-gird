@@ -111,6 +111,21 @@
 			height: 50px;
 		}
 
+		.box-04{
+			display: grid;
+			grid-template-rows: repeat(3, 200px);
+			grid-template-columns: repeat(3, 200px);
+
+			place-content: space-evenly space-between;
+		}
+		.box-04 .item:nth-child(4){
+			/* grid-row-start, grid-row-end, grid-column-start, grid-column-end */
+			/* 그리드 아이템(Item)을 배치하기 위해 그리드 선(Line)의 ‘시작 위치’와 ‘끝 위치’를 지정
+			‘숫자’를 지정하거나, ‘선 이름’을 지정하거나, span 키워드를 사용. */
+			/* grid-row: 3 / 4;
+			grid-column: 3 / 4; */
+		}
+
 		.aside{grid-area: aside;}
 		.footer{grid-area: footer;}
 	</style>
@@ -145,6 +160,12 @@
 			<li class="item"></li>
 			<li class="item"></li>
 			<li class="item"></li>
+		</ul>
+		<ul class="itembox box-04">
+			<li class="item">1</li>
+			<li class="item">2</li>
+			<li class="item">3</li>
+			<li class="item">4</li>
 		</ul>
 	</div>
 	<div class="aside">
